@@ -1,0 +1,12 @@
+<h1>List of Breweries</h1>
+
+<%= @brews.each do |brewery| %>
+  <ul>
+    <li><%=brewery.name %> </li>
+    <li><%=brewery.street brewery.city brewery.state %> </li>
+    <li><%=brewery.lat brewery.lng %> </li>
+    <li><%=brewery.rating %> </li>
+  </ul>
+<% end %>
+
+<%= link_to 'New Brew', new_brew_path %>
