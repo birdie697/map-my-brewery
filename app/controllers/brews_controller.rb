@@ -12,16 +12,35 @@ class BrewsController < ApplicationController
 
   def create
 
+    name = params[:brew][:name]
     street = params[:brew][:street]
     city = params[:brew][:city]
     state = params[:brew][:state]
+    rating = params[:brew][:rating]
 
     address = "#{street}, #{city}, #{state}"
 
-    location_a = Geokit::Geocoders::GoogleGeocoder.geocode '140 Market St, San Francisco, CA'
-    location_b = GoogleGeocoder.geocode("140 Market St, San Francisco, CA")
+    location = GoogleGeocoder.geocode(address)
+    lat = location.lat
+    lng = location.lng
+
+    @brew = Brew.new
+
+    @brew.name = name
+    @brew.street = street
+    @brew.city = city
+    @brew.state = state
+    @brew.lat = lat
+    @brew.lng = lng
+    @brew.rating = rating
 
     binding.pry
+
+    if @brew.save
+      redirect_to brews_path
+    else
+      render :new
+    end
 
   end
 

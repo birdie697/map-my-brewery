@@ -1,5 +1,4 @@
 class Brew < ApplicationRecord
-  acts_as_mappable :auto_geocode=>{:field=>:address, :error_message=>'Could not geocode address'}
 
   validates :name, presence: true
   validates :street, presence: true

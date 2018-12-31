@@ -1,12 +1,33 @@
 <h1>List of Breweries</h1>
 
-<%= @brews.each do |brewery| %>
-  <ul>
-    <li><%=brewery.name %> </li>
-    <li><%=brewery.street brewery.city brewery.state %> </li>
-    <li><%=brewery.lat brewery.lng %> </li>
-    <li><%=brewery.rating %> </li>
-  </ul>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @brews.each do |brewery| %>
+      <tr>
+        <td><%=brewery.name %> </td>
+        <td><%=brewery.street %> </td>
+        <td><%=brewery.city %> </td>
+        <td><%=brewery.state %> </td>
+        <td><%=brewery.lat %> </td>
+        <td><%=brewery.lng %> </td>
+        <td><%=brewery.rating %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
 
 <%= link_to 'New Brew', new_brew_path %>

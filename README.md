@@ -20,27 +20,27 @@ application up and running.
       gem 'geokit'
       gem 'geokit-rails'
 
-06.  $ bundle install
-07.  $ rails g geokit_rails:install
+06.  $ rails g geokit_rails:install
 
-08.  Edit '/config/initializers/geokit_config.rb' by uncommenting out the following:
+07.  Edit '/config/initializers/geokit_config.rb' by uncommenting out the following:
 
       Geokit::Geocoders::GoogleGeocoder.api_key = ENV["GOOGLE_API_KEY"]
       Geokit::Geocoders::provider_order = [:google]
 
-09.  Create '.env' at the root of the project and add the following:
+08.  Create '.env' at the root of the project and add the following:
 
       GOOGLE_API_KEY="<the key here>"
 
-10.  Edit '.gitignore' by adding the .env file under # Ignore master key for decrypting credentials and more.
+09.  Edit '.gitignore' by adding the .env file under # Ignore master key for decrypting credentials and more.
 
       # Ignore master key for decrypting credentials and more.
       /config/master.key
       .env
 
-11.  $ bundle exec rake db:create
-12.  $ bundle exec rails generate migration create_brews
-13.  $ bundle exec rake db:migrate && bundle exec rake db:rollback && bundle exec rake db:migrate
+10.  $ bundle exec rake db:create
+11.  $ bundle exec rails generate migration create_brews
+12.  $ bundle exec rake db:migrate && bundle exec rake db:rollback && bundle exec rake db:migrate
+13.  $ bundle install
 
 14.  To start app:
 
