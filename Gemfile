@@ -55,3 +55,4 @@ gem 'dotenv', '~> 2.5'
 gem 'dotenv-rails', group: [:development, :test]
 gem 'geokit'
 gem 'geokit-rails'
+gem 'webpacker', '~> 3.2'

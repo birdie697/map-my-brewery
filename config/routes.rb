@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   root 'brews#new'
 
   resources :brews, only: [:index, :new, :create]
-  
+
 end
