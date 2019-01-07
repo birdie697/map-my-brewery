@@ -5,33 +5,32 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
-
+  <br>
   <div class="field">
     <%= f.label :street, "Street Address" %><br />
     <%= f.text_field :street %>
   </div>
-
+  <br>
   <div class="field">
     <%= f.label :city %><br />
     <%= f.text_field :city %>
   </div>
-
+  <br>
   <div class="field">
     <%= f.label :state,"State Abbreviation" %><br />
     <%= f.text_field :state %>
   </div>
-
+  <br>
   <div class="field">
     <%= f.label :rating, "How would your rate the brewery?" %><br />
     <%= f.radio_button :rating, 'Good' %> Good
     <%= f.radio_button :rating, 'Okay' %> Okay
     <%= f.radio_button :rating, 'Bad' %> Bad
   </div>
-
+  <br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Add Brewery"%>
   </div>
-
+  <br>
 <% end %>
-
 <%= link_to 'View List', brews_path %>
