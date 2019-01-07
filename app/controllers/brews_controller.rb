@@ -1,6 +1,6 @@
 require 'geokit'
-include Geokit::Geocoders
 class BrewsController < ApplicationController
+  include Geokit::Geocoders
 
   def index
     @brews = Brew.all
